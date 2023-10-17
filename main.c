@@ -4,25 +4,32 @@
         *  and other features i wanna eventually implement into the system such as.
         *
         *
-        *  time in a digital clock
-        *  a functioning gui system
-        *  handling more than 2 variables at once
-        *  a .exe output
+        *  time in a digital clock <X>
+        *  a functioning gui system < >
+        *  handling more than 2 variables at once < >
+        *  a .exe output < >
         *
         * ==============================================================================*
         */
 
 #include <stdio.h>
 #include "functions.h"
+#include <time.h>
+
+
 int main() {
 
     double variable;
     double variable2;
+
+
+
     printf("Enter variable: ");
     scanf("%lf",&variable);
 
     int hold = 1;
     while(hold == 1) {
+
 
 
         /*
@@ -32,8 +39,17 @@ int main() {
          * ==============================================================================*
          */
 
+
+
         int number;
+        time_t time1;
+
+        time1 = time(NULL);
+        printf("Date and time is ");
+        printf("%s", asctime(localtime(&time1)));
+
         printf("variable is %lf", variable);
+
         printf("\nselect from your following options,\n 0: quit \n 1: add variable \n 2: Subtract variable \n 3: multiply variable \n 4: divide variable \n 5: Clear variable \n 6: square root  \n 7: Power of \n" );
         scanf("%d", &number);
 
